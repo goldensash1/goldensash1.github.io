@@ -105,3 +105,54 @@ window.onclick = function (event) {
         closeModal();
     }
 }
+
+function validateForm(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get input values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    // Get error elements
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let messageError = document.getElementById("messageError");
+
+    // Reset error messages
+    nameError.innerText = "";
+    emailError.innerText = "";
+    messageError.innerText = "";
+
+    let isValid = true;
+
+    // Name validation
+    if (name === "") {
+        nameError.innerText = "Name is required";
+        isValid = false;
+    }
+
+    // Email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "") {
+        emailError.innerText = "Email is required";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        emailError.innerText = "Invalid email format";
+        isValid = false;
+    }
+
+    // Message validation
+    if (message === "") {
+        messageError.innerText = "Message cannot be empty";
+        isValid = false;
+    }
+
+    // If everything is valid, submit the form
+    if (isValid) {
+        alert("Form submitted successfully!");
+        document.querySelector(".contact-form").submit(); // Submit the form
+    }
+
+    return isValid;
+}

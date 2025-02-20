@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="./assets//goldensash.jpg" type="image/x-icon">
 </head>
 <body>
+    <!-- This is the navugation bar -->
     <div class="floating-shapes">
         <div style="width: 200px; height: 200px; top: 20%; left: 10%"></div>
         <div style="width: 150px; height: 150px; top: 60%; right: 15%"></div>
@@ -30,7 +31,7 @@
             </div>
         </nav>
     </div>
-    
+    <!-- Home slider -->
     <section id="home" class="hero">
         <div class="hero-content">
             <img src="./assets/goldensash.jpg" 
@@ -52,6 +53,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Parters Sliders -->
+
     <section id="Partner" class="container">
         <h2 class="interactive-text">Patners</h2>
         <div class="slider-container">
@@ -66,6 +70,8 @@
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </section>
+
+    <!-- Languages used -->
     <section id="about" class="container">
         <h2 class="interactive-text">About Me</h2>
         <div class="about-grid">
@@ -104,7 +110,7 @@
             </a>
         </div>
     </section>
-
+<!-- My journey -->
     <section id="journey" class="container">
         <h2 class="interactive-text">My Journey</h2>
         <div class="timeline">
@@ -161,6 +167,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Projects worked on -->
 
     <section id="projects" class="container">
         <h2 class="interactive-text">Featured Projects</h2>
@@ -222,6 +230,8 @@
             <p id="modal-description"></p>
         </div>
     </div>
+
+    <!-- Contacts form -->
     <section id="contact" class="container">
         <h2 class="interactive-text">Contact Me</h2>
         <div class="contact-grid">
@@ -236,15 +246,21 @@
                     <a href="https://www.instagram.com/golden_sash_/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="5" placeholder="Message" required></textarea>
-                <button class="btn">Send Message</button>
+            <form class="contact-form" onsubmit="return validateForm(event)">
+                <input type="text" id="name" placeholder="Name">
+                <div id="nameError" class="error"></div>
+        
+                <input type="email" id="email" placeholder="Email">
+                <div id="emailError" class="error"></div>
+        
+                <textarea id="message" rows="5" placeholder="Message"></textarea>
+                <div id="messageError" class="error"></div>
+        
+                <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
     </section>
-
+<!-- This is the footer -->
     <footer>
         <div class="social-icons">
             <a href="https://github.com/goldensash1" target="_blank"><i class="fab fa-github"></i></a>
