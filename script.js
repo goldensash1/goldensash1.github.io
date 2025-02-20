@@ -2,14 +2,14 @@ function setTheme(theme) {
     document.body.className = theme;
     localStorage.setItem('theme', theme);
     const themeToggle = document.querySelector('.theme-toggle');
-    themeToggle.innerHTML = theme === 'light-theme' 
-        ? '<i class="fas fa-sun"></i>' 
+    themeToggle.innerHTML = theme === 'light-theme'
+        ? '<i class="fas fa-sun"></i>'
         : '<i class="fas fa-moon"></i>';
 }
 
 function toggleTheme() {
-    const currentTheme = document.body.classList.contains('light-theme') 
-        ? '' 
+    const currentTheme = document.body.classList.contains('light-theme')
+        ? ''
         : 'light-theme';
     setTheme(currentTheme);
 }
@@ -41,7 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Scroll Animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             entry.target.style.opacity = 1;
             entry.target.style.transform = 'translateY(0)';
         }
@@ -67,3 +67,41 @@ document.querySelectorAll('.timeline-item, .project-card').forEach(el => observe
 //         window.open(this.href, this.target);
 //     });
 // });
+
+
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const slides = document.querySelectorAll('.slide');
+    const slider = document.querySelector('.slider');
+    const totalSlides = slides.length;
+
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function autoSlide() {
+    moveSlide(1);
+}
+
+setInterval(autoSlide, 3000); // Auto-slide every 3 seconds
+
+
+
+function openModal(title, description, imageUrl) {
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-description').innerText = description;
+    document.getElementById('modal-image').src = imageUrl;
+    document.getElementById('modal').style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = "none";
+}
+
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    if (event.target === document.getElementById('modal')) {
+        closeModal();
+    }
+}

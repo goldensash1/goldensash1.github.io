@@ -30,7 +30,7 @@
             </div>
         </nav>
     </div>
-
+    
     <section id="home" class="hero">
         <div class="hero-content">
             <img src="./assets/goldensash.jpg" 
@@ -52,7 +52,20 @@
             </div>
         </div>
     </section>
-
+    <section id="Partner" class="container">
+        <h2 class="interactive-text">Patners</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="https://msilab.rw/assets/images/logo/logo-dark.png" width="100" height="100" alt="Partner 2"></div>
+                <div class="slide"><img src="https://msilab.rw/assets/images/logo/logo-light.png" width="100" height="100" alt="Partner 1"></div>
+                <div class="slide"><img src="https://parent.schoolflow.rw/assets/img-login.png" width="100" height="100" alt="Partner 1"></div>
+                <div class="slide"><img src="https://schoolflow.rw/images/logo.png" width="100" height="100" alt="Partner 1"></div>
+                <div class="slide"><img src="https://linen-heron-872813.hostingersite.com/media/logo1.png" width="100" height="100" alt="Partner 3"></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
     <section id="about" class="container">
         <h2 class="interactive-text">About Me</h2>
         <div class="about-grid">
@@ -152,52 +165,63 @@
     <section id="projects" class="container">
         <h2 class="interactive-text">Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" onclick="openModal('Schoolflow', 'React-Native, SQL, Php', 'https://msilab.rw/assets/images/portfolio/2.jpg')">
                 <img src="https://msilab.rw/assets/images/portfolio/2.jpg" alt="Mobile App">
-                <div style="padding: 1rem;">
+                <div>
                     <h3>Schoolflow</h3>
                     <p>React-Native, SQL, Php</p>
                 </div>
             </div>
-            <div class="project-card">
+            
+            <div class="project-card" onclick="openModal('Isoko', 'React Native, Firebase', 'https://msilab.rw/assets/images/portfolio/1.jpg')">
                 <img src="https://msilab.rw/assets/images/portfolio/1.jpg" alt="Mobile App">
-                <div style="padding: 1rem;">
+                <div>
                     <h3>Isoko</h3>
                     <p>React Native, Firebase</p>
                 </div>
             </div>
-            <div class="project-card">
+            
+            <div class="project-card" onclick="openModal('Hose Ventures', 'React-Native, Node.js, MongoDB', 'https://masasusalomon.com/assets/hoseventures-mIwpkMEV.png')">
                 <img src="https://masasusalomon.com/assets/hoseventures-mIwpkMEV.png" alt="Mobile App">
-                <div style="padding: 1rem;">
+                <div>
                     <h3>Hose Ventures</h3>
-                    <p>React-Native Node.js, MongoDB</p>
+                    <p>React-Native, Node.js, MongoDB</p>
                 </div>
             </div>
-            
-            <div class="project-card">
+    
+            <div class="project-card" onclick="openModal('ZAP', 'React-Native, Node.js, SQL', 'https://masasusalomon.com/assets/zap-i7W7xe8Y.png')">
                 <img src="https://masasusalomon.com/assets/zap-i7W7xe8Y.png" alt="Mobile App">
-                <div style="padding: 1rem;">
+                <div>
                     <h3>ZAP</h3>
                     <p>React-Native, Node.js, SQL</p>
                 </div>
             </div>
-            <div class="project-card">
+    
+            <div class="project-card" onclick="openModal('Agri Aid', 'React-Native, Node.js, SQL', 'https://elites.msilab.rw/images/challenge5.jpg')">
                 <img src="https://elites.msilab.rw/images/challenge5.jpg" alt="Dashboard">
-                <div style="padding: 1rem;">
+                <div>
                     <h3>Agri Aid</h3>
                     <p>React-Native, Node.js, SQL</p>
                 </div>
             </div>
-            <div class="project-card">
+    
+            <div class="project-card" onclick="openModal('Rwanda Driver Code', 'Html/CSS, Javascript, Php, MYSQL', 'https://salomon-m-portfolio.netlify.app/assets/img/project-1.jpg')">
                 <img src="https://salomon-m-portfolio.netlify.app/assets/img/project-1.jpg" alt="IoT">
-                <div style="padding: 1rem;">
+                <div>
                     <h3>Rwanda Driver Code</h3>
                     <p>Html/CSS, Javascript, Php, MYSQL</p>
                 </div>
             </div>
         </div>
     </section>
-
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">X</button>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="Project Image">
+            <p id="modal-description"></p>
+        </div>
+    </div>
     <section id="contact" class="container">
         <h2 class="interactive-text">Contact Me</h2>
         <div class="contact-grid">
